@@ -1,0 +1,24 @@
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+name: "automotion"
+jobs:
+  build:
+    name: automotion
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      #- run: git config --global user.name ${{ secrets.GITUSERNAME }}
+      #- run: git config --global user.name ${{ secrets.GITEMAIL }}
+      - run: git clone https://${{ secrets.ACCESSSECRET }}@github.com/Saidiislam/Nanbu-motel.git
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "Nanbu-motel/public"
+          tag: v7.0.${{ github.run_number }}
+      
