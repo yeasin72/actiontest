@@ -1,18 +1,9 @@
-
-on:
-  pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
-name: "automotion"
+name: GitHub Actions Demo
+on: [push]
 jobs:
-  build:
-    name: automotion
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
       #- run: git config --global user.name ${{ secrets.GITUSERNAME }}
       #- run: git config --global user.name ${{ secrets.GITEMAIL }}
       - run: git clone https://${{ secrets.ACCESSSECRET }}@github.com/Saidiislam/Nanbu-motel.git
