@@ -9,7 +9,7 @@ jobs:
       - run: git config --global user.password ${{ secrets.ACCESSSECRET }}
       - run: |
           ls
-          gi clone https://${{ secrets.TOKEN }}@github.com/yeasin72/actiontest.git
+          git clone https://${{ secrets.TOKEN }}@github.com/yeasin72/actiontest.git
           cd actiontest
           rm -rf .git
           cd ..
