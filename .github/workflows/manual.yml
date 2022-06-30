@@ -13,6 +13,6 @@ jobs:
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "Nanbu-motel/public"
+          artifacts: "public"
           tag: v7.0.${{ github.run_number }}
       
