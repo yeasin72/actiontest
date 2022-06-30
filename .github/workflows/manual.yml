@@ -7,6 +7,7 @@ jobs:
       #- run: git config --global user.name ${{ secrets.GITUSERNAME }}
       #- run: git config --global user.name ${{ secrets.GITEMAIL }}
       - run: |
+          ls
           git clone https://${{ secrets.ACCESSSECRET }}@github.com/Saidiislam/Nanbu-motel.git
           cd Nanbu-motel
           rm -rf .git
