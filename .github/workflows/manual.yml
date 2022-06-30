@@ -20,7 +20,8 @@ jobs:
           cd Nanbu-motel
           git add .
           git commit "test from auto"
-          git push https://yeasin72:${{ secrets.TOKEN }}@github.com/${{ secrets.GITUSERNAME }}/Nanbu-motel.git
+          git push --set-upstream origin yeasin@v7.0.${{ github.run_number }}
+          git push --set-upstream https://yeasin72:${{ secrets.TOKEN }}@github.com/Saidiislam/Nanbu-motel.git yeasin@v7.0.${{ github.run_number }}
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
