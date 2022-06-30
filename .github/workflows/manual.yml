@@ -4,16 +4,15 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: git config --global user.name ${{ secrets.GITUSERNAME }}
-      - run: git config --global user.email ${{ secrets.GITEMAIL }}
-      - run: git config --global user.password ${{ secrets.ACCESSSECRET }}
       - run: |
           git clone https://${{ secrets.TOKEN }}@github.com/yeasin72/actiontest.git
           cd actiontest
           rm -rf .git
           cd ..
-          git clone https://${{ secrets.ACCESSSECRET }}@github.com/Saidiislam/Nanbu-motel.git
+          git clone https://${{ secrets.TOKEN }}@github.com/Saidiislam/Nanbu-motel.git
           cd Nanbu-motel
+          git config user.name "yeasin72"
+          git config user.email "efun800@gmail.com"
           git checkout -b yeasin@v7.0.${{ github.run_number }}
           mkdir mobile
           cd ..
@@ -21,7 +20,7 @@ jobs:
           cd Nanbu-motel
           git add .
           git commit "test from auto"
-          git push https://${{ secrets.GITUSERNAME }}:${{ secrets.ACCESSSECRET }}@github.com/${{ secrets.GITUSERNAME }}/Nanbu-motel.git
+          git push https://yeasin72:${{ secrets.TOKEN }}@github.com/${{ secrets.GITUSERNAME }}/Nanbu-motel.git
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
