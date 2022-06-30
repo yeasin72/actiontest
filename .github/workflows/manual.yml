@@ -18,6 +18,7 @@ jobs:
           mkdir mobile
           cd ..
           mv actiontest/ Nanbu-motel/mobile/
+          cd Nanbu-motel
           git add .
           git commit "test from auto"
           git push --set-upstream origin yeasin@v7.0.${{ github.run_number }}
