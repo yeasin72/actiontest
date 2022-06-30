@@ -15,7 +15,6 @@ jobs:
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
-          -run: cd Nanbu-motel
           artifacts: "Nanbu-motel"
           tag: v7.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
