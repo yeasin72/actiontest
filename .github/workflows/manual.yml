@@ -9,6 +9,7 @@ jobs:
       - run: |
           git clone https://${{ secrets.ACCESSSECRET }}@github.com/Saidiislam/Nanbu-motel.git
           cd Nanbu-motel
+          rm -rf .git
       - run: ls
       - name: Push to Releases
         uses: ncipollo/release-action@v1
