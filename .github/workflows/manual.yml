@@ -18,4 +18,5 @@ jobs:
           -run: cd Nanbu-motel
           artifacts: "Nanbu-motel"
           tag: v7.0.${{ github.run_number }}
+          token: ${{ secrets.TOKEN }}
       
